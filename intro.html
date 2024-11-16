@@ -160,6 +160,65 @@
             </div>
         </section>
 
+        <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shows en La Papayita Gastrobar</title>
+    <style>
+        .shows {
+            background-color: #ffe0b2;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .show-item {
+            margin-bottom: 15px;
+        }
+        .show-title {
+            font-weight: bold;
+            color: #e65100;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sección de shows -->
+    <section class="shows" id="shows-section">
+        <h2>Próximos Shows en La Papayita Gastrobar</h2>
+        <div id="shows-container"></div>
+    </section>
+
+    <script>
+        // Array de shows con detalles
+        const shows = [
+            { title: "Noche de Salsa", date: "25 de noviembre, 2024", time: "8:00 PM", description: "Una noche de salsa con la mejor música en vivo." },
+            { title: "Show de Comedia", date: "1 de diciembre, 2024", time: "7:00 PM", description: "Ríe sin parar con los mejores comediantes locales." },
+            { title: "Concierto Acústico", date: "10 de diciembre, 2024", time: "9:00 PM", description: "Disfruta de una noche íntima con un concierto acústico." }
+        ];
+
+        // Función para mostrar los shows en la página
+        function displayShows() {
+            const showsContainer = document.getElementById("shows-container");
+            shows.forEach(show => {
+                const showItem = document.createElement("div");
+                showItem.classList.add("show-item");
+                showItem.innerHTML = `
+                    <p class="show-title">${show.title}</p>
+                    <p>Fecha: ${show.date}</p>
+                    <p>Hora: ${show.time}</p>
+                    <p>${show.description}</p>
+                `;
+                showsContainer.appendChild(showItem);
+            });
+        }
+
+        // Llamar a la función para mostrar los shows
+        displayShows();
+    </script>
+</body>
+</html>
+
         <a href="#" class="btn">Dejar un Comentario</a>
     </div>
 
