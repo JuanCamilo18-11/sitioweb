@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interés por un Plato de Comida</title>
+    <title>Interés por Platos de Comida</title>
     <style>
         .plato {
             border: 1px solid #e65100;
@@ -30,24 +30,49 @@
             margin-top: 10px;
             color: #bf360c;
         }
+        .precio {
+            font-size: 1.2em;
+            color: #e65100;
+        }
     </style>
 </head>
 <body>
     <div class="plato">
         <h2>Chuleta Valluna</h2>
         <p>Una deliciosa chuleta de cerdo empanizada, servida con papas fritas y ensalada.</p>
-        <button class="btn-interes" onclick="mostrarInteres()">¡Me interesa!</button>
-        <p class="contador" id="contadorInteres">Interés: 0</p>
+        <p class="precio">Precio: $25,000 COP</p>
+        <button class="btn-interes" onclick="mostrarInteres('Chuleta Valluna')">¡Me interesa!</button>
+        <p class="contador" id="contadorChuleta">Interés: 0</p>
+    </div>
+
+    <div class="plato">
+        <h2>Sancocho de Gallina</h2>
+        <p>Sopa tradicional con gallina, yuca, plátano y maíz, acompañado de arroz y aguacate.</p>
+        <p class="precio">Precio: $30,000 COP</p>
+        <button class="btn-interes" onclick="mostrarInteres('Sancocho de Gallina')">¡Me interesa!</button>
+        <p class="contador" id="contadorSancocho">Interés: 0</p>
+    </div>
+
+    <div class="plato">
+        <h2>Arroz Atollado</h2>
+        <p>Arroz cremoso cocinado con pollo, cerdo y verduras, típico del Valle del Cauca.</p>
+        <p class="precio">Precio: $28,000 COP</p>
+        <button class="btn-interes" onclick="mostrarInteres('Arroz Atollado')">¡Me interesa!</button>
+        <p class="contador" id="contadorArroz">Interés: 0</p>
     </div>
 
     <script>
-        // Inicializa el contador de interés
-        let contador = 0;
+        // Inicializa los contadores de interés
+        let contadores = {
+            'Chuleta Valluna': 0,
+            'Sancocho de Gallina': 0,
+            'Arroz Atollado': 0
+        };
 
         // Función para mostrar interés
-        function mostrarInteres() {
-            contador++;
-            document.getElementById("contadorInteres").innerText = "Interés: " + contador;
+        function mostrarInteres(plato) {
+            contadores[plato]++;
+            document.getElementById(`contador${plato.replace(/\s/g, '')}`).innerText = "Interés: " + contadores[plato];
         }
     </script>
 </body>
